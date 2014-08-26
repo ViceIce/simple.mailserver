@@ -30,13 +30,13 @@ namespace Simple.MailServer.Smtp
     public class SmtpResponse : ICloneable, IEquatable<SmtpResponse>
     {
         public static readonly SmtpResponse None = new SmtpResponse(0, "");
-        public static readonly SmtpResponse OK = new SmtpResponse(250, "OK");
-        public static readonly SmtpResponse DataStart = new SmtpResponse(354, "OK");
-        public static readonly SmtpResponse Disconnect = new SmtpResponse(221, "Bye");
+        public static readonly SmtpResponse OK = new SmtpResponse(250, "2.1.0 Ok");
+        public static readonly SmtpResponse DataStart = new SmtpResponse(354, "End data with <CR><LF>.<CR><LF>");
+        public static readonly SmtpResponse Disconnect = new SmtpResponse(221, "2.0.0 Bye");
 
         public static readonly SmtpResponse InternalServerError = new SmtpResponse(500, "Internal Server Error");
         public static readonly SmtpResponse LineTooLong = new SmtpResponse(500, "Line Too Long");
-        public static readonly SmtpResponse NotImplemented = new SmtpResponse(502, "5.5.2 Command not implemented");
+        public static readonly SmtpResponse NotImplemented = new SmtpResponse(502, "5.5.2 Command not recognized");
         public static readonly SmtpResponse NotIdentified = new SmtpResponse(502, "5.5.1 Use HELO/EHLO first.");
         public static readonly SmtpResponse SyntaxError = new SmtpResponse(501, "Syntax error in parameters or arguments");
 
