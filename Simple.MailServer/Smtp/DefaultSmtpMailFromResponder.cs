@@ -33,7 +33,7 @@ namespace Simple.MailServer.Smtp
             Configuration = configuration;
         }
 
-        public SmtpResponse VerifyMailFrom(SmtpSessionInfo sessionInfo, MailAddressWithParameters mailAddressWithParameters)
+        public virtual SmtpResponse VerifyMailFrom(SmtpSessionInfo sessionInfo, MailAddressWithParameters mailAddressWithParameters)
         {
             return SmtpResponse.OK;
         }

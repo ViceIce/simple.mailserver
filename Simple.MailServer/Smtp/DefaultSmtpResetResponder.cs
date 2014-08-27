@@ -33,7 +33,7 @@ namespace Simple.MailServer.Smtp
             Configuration = configuration;
         }
 
-        public SmtpResponse Reset(SmtpSessionInfo sessionInfo)
+        public virtual SmtpResponse Reset(SmtpSessionInfo sessionInfo)
         {
             return SmtpResponse.OK;
         }
